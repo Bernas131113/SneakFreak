@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "argon2-browser": "^1.18.0",
+    "axios": "^1.7.9",
+    "bcryptjs": "^2.4.3",
+    "crypto-browserify": "^3.12.1",
+    "crypto-js": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
+}

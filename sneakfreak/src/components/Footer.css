@@ -1,0 +1,17 @@
+.footer {
+    padding: 20px 40px;
+    background: #000;
+    color: #fff;
+  }
+  
+  .footer-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-menu li a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
