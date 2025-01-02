@@ -1,36 +1,95 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Reduzindo o padding */
+  background-color: #2e7d32; /* Verde escuro */
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra mais discreta */
+}
+
+.navbar .logo {
+  height: 40px; /* Logo menor */
+}
+
+.navbar .menu {
+  display: flex;
+  gap: 15px; /* Reduzindo o espaçamento entre itens */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .menu li {
+  position: relative;
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px; /* Texto menor */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar .menu a:hover {
+  color: #c8e6c9; /* Verde claro para hover */
+}
+
+.navbar .logout-btn {
+  background: #e53935; /* Vermelho para botão de logout */
+  color: #fff;
+  border: none;
+  padding: 6px 12px; /* Botão menor */
+  border-radius: 4px; /* Bordas levemente arredondadas */
+  cursor: pointer;
+  font-size: 14px; /* Texto menor */
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .logout-btn:hover {
+  background: #b71c1c; /* Vermelho mais escuro para hover */
+}
+
+.navbar .icons {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Reduzindo o espaçamento entre ícones */
+}
+
+.navbar .icons .search-btn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 30px; /* Ícone menor */
+  height: 30px; /* Ícone menor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px; /* Texto menor */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .icons .search-btn:hover {
+  background-color: #1b5e20; /* Verde mais escuro para hover */
+  color: #c8e6c9; /* Verde claro para hover */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
+
+  .navbar .menu {
+    flex-direction: column;
+    gap: 8px; /* Menor espaçamento em telas menores */
   }
-  
-  .menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+
+  .navbar .icons {
+    margin-top: 8px; /* Ajustando margens para responsividade */
   }
-  
-  .menu li a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .icons button {
-    background: none;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-  }
-  .logo {
-    height: 50px; /* Ajuste a altura conforme necessário */
-    margin-right: 20px; /* Espaçamento entre o logo e os links */
-  }
-  
+}
