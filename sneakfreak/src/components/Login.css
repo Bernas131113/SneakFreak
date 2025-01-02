@@ -3,7 +3,9 @@ form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items: center;
 }
+
 
 input {
   padding: 10px;
@@ -13,9 +15,10 @@ input {
   width: 100%;
 }
 
+
 button {
   padding: 12px;
-  background-color: #007bff;
+  background-color: gray;
   color: white;
   border: none;
   border-radius: 4px;
@@ -28,7 +31,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: gainsboro;
 }
 
 /* Estilo para o botão de logout */
@@ -65,14 +68,14 @@ button.logout:hover {
 
 /* Estilo para os botões de ação (Adicionar e Editar) */
 .admin-actions button {
-  background-color: #007bff;
+  background-color: gainsboro;
   width: auto;
   max-width: 200px; /* Limita a largura máxima */
   margin: 10px auto; /* Centraliza os botões */
 }
 
 .admin-actions button:hover {
-  background-color: #0056b3;
+  background-color: gray;
 }
 
 /* Estilo para a lista de sneakers */

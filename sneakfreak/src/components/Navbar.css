@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px; /* Reduzindo o padding */
-  background-color: #2e7d32; /* Verde escuro */
+  background-color: gray; /* Verde escuro */
   color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra mais discreta */
 }
@@ -33,7 +33,7 @@
 }
 
 .navbar .menu a:hover {
-  color: #c8e6c9; /* Verde claro para hover */
+  color: black; /* Verde claro para hover */
 }
 
 .navbar .logout-btn {
@@ -74,8 +74,8 @@
 }
 
 .navbar .icons .search-btn:hover {
-  background-color: #1b5e20; /* Verde mais escuro para hover */
-  color: #c8e6c9; /* Verde claro para hover */
+  background-color: black; /* Verde mais escuro para hover */
+  color: black; /* Verde claro para hover */
 }
 
 @media (max-width: 768px) {
@@ -92,4 +92,5 @@
   .navbar .icons {
     margin-top: 8px; /* Ajustando margens para responsividade */
   }
+  
 }

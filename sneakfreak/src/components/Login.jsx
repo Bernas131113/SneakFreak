@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import bcrypt from 'bcryptjs';  // Importando bcrypt para comparação
+import './Login.css'
+
 
 const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -40,7 +42,7 @@ const LoginPage = ({ onLogin }) => {
         <div>
           <input
             type="text"
-            placeholder="Nome de usuário"
+            placeholder="Utilizador"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
@@ -49,7 +51,7 @@ const LoginPage = ({ onLogin }) => {
         <div>
           <input
             type="password"
-            placeholder="Senha"
+            placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required

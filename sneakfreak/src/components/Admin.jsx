@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './admin.css'
 
 const Admin = ({ onLogout }) => {
   const [produtos, setProdutos] = useState([]);

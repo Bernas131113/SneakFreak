@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import bcrypt from 'bcryptjs';  // Importando bcrypt
+import './Register.css'
 
 const RegisterPage = ({ onRegister }) => {
   const [formData, setFormData] = useState({ username: '', password: '', confirmPassword: '' });
@@ -63,30 +64,30 @@ const RegisterPage = ({ onRegister }) => {
 
   return (
     <div>
-      <h2>Registrar</h2>
+      <h2>Registar</h2>
       <form onSubmit={handleRegister}>
         <input
           type="text"
           name="username"
-          placeholder="Usuário"
+          placeholder="Utilizador"
           value={formData.username}
           onChange={handleChange}
         />
         <input
           type="password"
           name="password"
-          placeholder="Senha"
+          placeholder="password"
           value={formData.password}
           onChange={handleChange}
         />
         <input
           type="password"
           name="confirmPassword"
-          placeholder="Confirmar Senha"
+          placeholder="Confirmar password"
           value={formData.confirmPassword}
           onChange={handleChange}
         />
-        <button type="submit">Registrar</button>
+        <button type="submit">Registar</button>
       </form>
       {errorMessage && <p>{errorMessage}</p>}
       {successMessage && <p>{successMessage}</p>}
