@@ -5,25 +5,22 @@ import Hero from './components/Hero';
 import ProductsGrid from './components/ProductsGrid';
 import Footer from './components/Footer';
 import LoginPage from './components/Login';
-import RegisterPage from './components/Register';  // Importando o RegisterPage
-import Admin from './components/Admin';  // Importando o Admin
+import RegisterPage from './components/Register';
+import Admin from './components/Admin';
 import './App.css';
 
 const App = () => {
-  const [user, setUser] = useState(null); // Estado para armazenar informações do usuário
-  const [isCartOpen, setIsCartOpen] = useState(false); // Estado para controlar o carrinho
-  const [cart, setCart] = useState([]); // Estado para armazenar os produtos no carrinho
+  const [user, setUser] = useState(null);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [cart, setCart] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(''); // Termo de pesquisa
 
   const handleLogin = (username, password) => {
     setUser({ username, isAdmin: username === 'admin' });
   };
 
   const handleLogout = () => {
-    setUser(null); // Remove o usuário logado
-  };
-
-  const handleRegister = (username) => {
-    setUser({ username, isAdmin: username === 'admin' }); // Após registro, o usuário entra automaticamente
+    setUser(null);
   };
 
   const toggleCart = () => {
@@ -41,8 +38,8 @@ const App = () => {
   const finalizePurchase = () => {
     if (cart.length > 0) {
       alert('Compra finalizada com sucesso!');
-      setCart([]); // Limpa o carrinho após a compra
-      setIsCartOpen(false); // Fecha o carrinho
+      setCart([]);
+      setIsCartOpen(false);
     } else {
       alert('Seu carrinho está vazio.');
     }
@@ -51,33 +48,28 @@ const App = () => {
   return (
     <Router>
       <div className="app-container">
-        <Navbar 
-          isAuthenticated={!!user} 
-          isAdmin={user?.isAdmin} 
+        <Navbar
+          isAuthenticated={!!user}
+          isAdmin={user?.isAdmin}
           onLogout={handleLogout}
-          toggleCart={toggleCart} 
+          toggleCart={toggleCart}
+          setSearchTerm={setSearchTerm} // Passando a pesquisa
         />
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/products" element={<ProductsGrid addToCart={addToCart} />} />
           <Route
-            path="/login"
-            element={user ? <Navigate to="/admin" /> : <LoginPage onLogin={handleLogin} />}
+            path="/products"
+            element={<ProductsGrid addToCart={addToCart} searchTerm={searchTerm} />}
           />
-          <Route
-            path="/register"
-            element={<RegisterPage onRegister={handleRegister} />} // Rota de Registro
-          />
-          <Route
-            path="/admin"
-            element={user?.isAdmin ? <Admin onLogout={handleLogout} /> : <Navigate to="/login" />}
-          />
+          <Route path="/login" element={user ? <Navigate to="/admin" /> : <LoginPage onLogin={handleLogin} />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/admin" element={user?.isAdmin ? <Admin onLogout={handleLogout} /> : <Navigate to="/login" />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
 
-        {/* Carrinho de Compras */}
+        {/* Modal do Carrinho */}
         {isCartOpen && (
-          <div className="cart-modal">
+          <div className={`cart-modal ${isCartOpen ? 'open' : ''}`}>
             <h2>Carrinho de Compras</h2>
             <ul>
               {cart.map((item) => (
@@ -92,7 +84,6 @@ const App = () => {
             <button onClick={toggleCart}>Fechar Carrinho</button>
           </div>
         )}
-
         <Footer />
       </div>
     </Router>

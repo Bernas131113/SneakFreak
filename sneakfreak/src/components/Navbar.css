@@ -2,10 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px; /* Reduzindo o padding */
-  background-color: gray; /* Verde escuro */
+  padding: 10px 20px;
+  background-color: gray; /* Cor de fundo */
   color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra mais discreta */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra discreta */
 }
 
 .navbar .logo {
@@ -14,10 +14,12 @@
 
 .navbar .menu {
   display: flex;
-  gap: 15px; /* Reduzindo o espaçamento entre itens */
+  justify-content: center; /* Centraliza os itens */
+  gap: 15px;
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-grow: 1; /* Faz a lista crescer e ocupar o espaço disponível */
 }
 
 .navbar .menu li {
@@ -33,29 +35,29 @@
 }
 
 .navbar .menu a:hover {
-  color: black; /* Verde claro para hover */
+  color: black; /* Cor de hover */
 }
 
 .navbar .logout-btn {
-  background: #e53935; /* Vermelho para botão de logout */
+  background: #e53935; /* Cor do botão de logout */
   color: #fff;
   border: none;
-  padding: 6px 12px; /* Botão menor */
-  border-radius: 4px; /* Bordas levemente arredondadas */
+  padding: 6px 12px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 14px; /* Texto menor */
+  font-size: 14px;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .navbar .logout-btn:hover {
-  background: #b71c1c; /* Vermelho mais escuro para hover */
+  background: #b71c1c; /* Cor de hover do botão */
 }
 
 .navbar .icons {
   display: flex;
   align-items: center;
-  gap: 10px; /* Reduzindo o espaçamento entre ícones */
+  gap: 10px;
 }
 
 .navbar .icons .search-btn {
@@ -63,34 +65,34 @@
   color: #fff;
   border: 2px solid #fff;
   border-radius: 50%;
-  width: 30px; /* Ícone menor */
-  height: 30px; /* Ícone menor */
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px; /* Texto menor */
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar .icons .search-btn:hover {
-  background-color: black; /* Verde mais escuro para hover */
-  color: black; /* Verde claro para hover */
+  background-color: black;
+  color: black;
 }
 
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Centraliza os itens na versão móvel */
   }
 
   .navbar .menu {
     flex-direction: column;
-    gap: 8px; /* Menor espaçamento em telas menores */
+    gap: 8px;
+    justify-content: center; /* Centraliza os itens do menu na versão móvel */
   }
 
   .navbar .icons {
-    margin-top: 8px; /* Ajustando margens para responsividade */
+    margin-top: 8px;
   }
-  
 }
