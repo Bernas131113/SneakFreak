@@ -16,7 +16,7 @@ const Admin = ({ onLogout }) => {
   const fetchProdutos = async () => {
     try {
       const response = await axios.get(
-        'https://api.sheety.co/a27d85010a5efc145cde9cef8cc83c46/interfacesWeb/sneakers'
+        'https://api.sheety.co/da4ef9e6c38d598207d9980e313a3a26/interfacesWeb/sneakers'
       );
       setProdutos(response.data.sneakers); // Supondo que os dados estão na chave 'sneakers'
     } catch (error) {
@@ -29,7 +29,7 @@ const Admin = ({ onLogout }) => {
   const handleAdicionarProduto = async () => {
     try {
       await axios.post(
-        'https://api.sheety.co/a27d85010a5efc145cde9cef8cc83c46/interfacesWeb/sneakers',
+        'https://api.sheety.co/da4ef9e6c38d598207d9980e313a3a26/interfacesWeb/sneakers',
         { sneaker: novoProduto }
       );
       fetchProdutos(); // Recarregar os produtos após adicionar
@@ -50,7 +50,7 @@ const Admin = ({ onLogout }) => {
   const handleSalvarEdicao = async () => {
     try {
       await axios.put(
-        `https://api.sheety.co/a27d85010a5efc145cde9cef8cc83c46/interfacesWeb/sneakers/${editandoProduto.id}`,
+        `https://api.sheety.co/da4ef9e6c38d598207d9980e313a3a26/interfacesWeb/sneakers/${editandoProduto.id}`,
         { sneaker: novoProduto }
       );
       fetchProdutos(); // Recarregar os produtos após editar
@@ -66,7 +66,7 @@ const Admin = ({ onLogout }) => {
   const handleExcluirProduto = async (id) => {
     try {
       await axios.delete(
-        `https://api.sheety.co/a27d85010a5efc145cde9cef8cc83c46/interfacesWeb/sneakers/${id}`
+        `https://api.sheety.co/da4ef9e6c38d598207d9980e313a3a26/interfacesWeb/sneakers/${id}`
       );
       fetchProdutos(); // Recarregar os produtos após excluir
     } catch (error) {

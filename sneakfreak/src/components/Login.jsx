@@ -12,7 +12,7 @@ const LoginPage = ({ onLogin }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     
-    const LOGIN_API_URL = 'https://api.sheety.co/a27d85010a5efc145cde9cef8cc83c46/interfacesWeb/login';
+    const LOGIN_API_URL = 'https://api.sheety.co/da4ef9e6c38d598207d9980e313a3a26/interfacesWeb/login';
 
     try {
       // Enviar dados de login para a API

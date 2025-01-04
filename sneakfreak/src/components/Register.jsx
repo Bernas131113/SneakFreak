@@ -28,7 +28,7 @@ const RegisterPage = ({ onRegister }) => {
     try {
       // Verifica se o usuário já existe
       const response = await axios.get(
-        `https://api.sheety.co/a27d85010a5efc145cde9cef8cc83c46/interfacesWeb/login`
+        `https://api.sheety.co/da4ef9e6c38d598207d9980e313a3a26/interfacesWeb/login`
       );
       const users = response.data.login; // Lista de usuários do Sheety
 
@@ -43,7 +43,7 @@ const RegisterPage = ({ onRegister }) => {
 
       // Fazendo a requisição POST com a senha criptografada
       await axios.post(
-        `https://api.sheety.co/a27d85010a5efc145cde9cef8cc83c46/interfacesWeb/login`,
+        `https://api.sheety.co/da4ef9e6c38d598207d9980e313a3a26/interfacesWeb/login`,
         {
           login: {
             username,

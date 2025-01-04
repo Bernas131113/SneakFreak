@@ -53,7 +53,7 @@ const App = () => {
           isAdmin={user?.isAdmin}
           onLogout={handleLogout}
           toggleCart={toggleCart}
-          setSearchTerm={setSearchTerm} // Passando a pesquisa
+          setSearchTerm={setSearchTerm}
         />
         <Routes>
           <Route path="/" element={<Hero />} />

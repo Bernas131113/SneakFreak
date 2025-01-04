@@ -6,7 +6,7 @@ const ProductsGrid = ({ addToCart, searchTerm }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const SHEETY_API_URL = 'https://api.sheety.co/a27d85010a5efc145cde9cef8cc83c46/interfacesWeb/sneakers';
+  const SHEETY_API_URL = 'https://api.sheety.co/da4ef9e6c38d598207d9980e313a3a26/interfacesWeb/sneakers';
 
   useEffect(() => {
     const fetchData = async () => {
